@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组合模式</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        // ReactDOM.render(<span><span>hello</span>world</span>, document.querySelector("#root"))
+        class ReactElement {
+            constructor(type, props) {
+                this.type = type
+                this.props = props
+            }
+        }
+        function createElement(type, props = {}, ...children) {
+            return new ReactElement(type, { ...props, children: children.length == 1 ? children[0] : children })
+        }
+        let rootElement = createElement('span', null, 'hello', createElement('span', null, 'world'))
+        function render(element, container) {
+            let { type, props } = element
+            let domElement = document.createElement(type)
+            for (let attr in props) {
+                if (attr === 'children') {
+                    if (typeof props[attr] == 'object') {
+                        props[attr].forEach(item => {
+                            if (typeof item == "object") {
+                                render(item, domElement)
+                            } else {
+                                domElement.appendChild(document.createTextNode(item))
+                            }
+                        })
+                    } else {
+                        domElement.appendChild(document.createTextNode(props[attr]))
+                    }
+                } else if (attr === 'className') {
+                    domElement.setAttribute('class', props[attr])
+                } else {
+                    domElement.setAttribute(attr, props[attr])
+                }
+            }
+            container.appendChild(domElement)
+        }
+        render(rootElement, document.querySelector('#root'))
+    </script>
+</body>
+
+</html>
