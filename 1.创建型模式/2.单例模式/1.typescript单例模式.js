@@ -1,16 +1,16 @@
 "use strict";
-var Window = /** @class */ (function () {
-    function Window(name) {
+var Window1 = /** @class */ (function () {
+    function Window1(name) {
         this.name = name;
     }
-    Window.getInstance = function (name) {
+    Window1.getInstance = function (name) {
         if (!this.instance) {
-            this.instance = new Window(name);
+            this.instance = new Window1(name);
         }
         return this.getInstance;
     };
-    return Window;
+    return Window1;
 }());
-var w1 = Window.getInstance();
-var w2 = Window.getInstance();
+var w1 = Window1.getInstance('');
+var w2 = Window1.getInstance('');
 console.log(w1 === w2);

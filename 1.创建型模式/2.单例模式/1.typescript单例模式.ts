@@ -1,14 +1,15 @@
-class Window {
-  constructor(name) {
+class Window1 {
+  name:string
+  constructor(name:string) {
     this.name = name;
   }
-  static getInstance(name) {
+  static getInstance(name:string) {
     if (!this.instance) {
-      this.instance = new Window(name);
+      this.instance = new Window1(name);
     }
     return this.getInstance;
   }
 }
-var w1 = Window.getInstance();
-var w2 = Window.getInstance();
+var w1 = Window1.getInstance('');
+var w2 = Window1.getInstance('');
 console.log(w1 === w2);

@@ -1,4 +1,4 @@
-function CreateJsPerson(name, age) {
+function CreateJsPerson(name:string, age:string) {
   //浏览器默认创建的对象囧事我们的实列p1 -->this
   this.name = name;
   this.age = age;

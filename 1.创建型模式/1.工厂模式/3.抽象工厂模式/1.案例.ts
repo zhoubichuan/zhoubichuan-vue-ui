@@ -8,9 +8,9 @@ class AppleButton{
         console.log('苹果按钮')
     }
 }
-class WindowButton{
+class WindowsButton{
     render(){
-        console.log('window按钮')
+        console.log('windows按钮')
     }
 }
 class Icon{
@@ -23,20 +23,12 @@ class AppleIcon{
         console.log('苹果图标')
     }
 }
-class WindowIcon{
+class WindowsIcon{
     render(){
-        console.log('Window图标')
+        console.log('Windows图标')
     }
 }
-class Factory{
-    createButton(){
-
-    }
-    createIcon(){
-
-    }
-}
-class AppleFactory{
+class AppleFactory3{
     createButton(){
         return new AppleButton()
     }
@@ -44,22 +36,22 @@ class AppleFactory{
         return new AppleIcon()
     }
 }
-class WindowsFactory{
+class WindowsFactory3{
     createButton(){
-        return new WindowButton()
+        return new WindowsButton()
     }
     createIcon(){
-        return new WindowIcon()
+        return new WindowsIcon()
     }
 }
-const settings={
-    'apple':AppleFactory,
-    'windows':WindowsFactory
-}/
-let appleFactory=new settings['apple']();
-appleFactory.createButton().render()
-appleFactory.createIcon().render()
+const settings3={
+    'apple':AppleFactory3,
+    'windows':WindowsFactory3
+}
+let appleFactory3=new settings3['apple']()
+appleFactory3.createButton().render()
+appleFactory3.createIcon().render()
 
-let windowsFactory=new settings['windows']()
-windowsFactory.createButton().render()
-windowsFactory.createIcon().render()
+let windowsFactory3=new settings3['windows']()
+windowsFactory3.createButton().render()
+windowsFactory3.createIcon().render()

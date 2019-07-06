@@ -22,12 +22,12 @@ class Orange2 extends Plant2{
     }
 }
 class AppleFactory{
-    create():Object{
+    create(){
         return new Apple2('苹果')
     }
 }
 class OrangeFactory{
-    create():Object{
+    create(){
         return new Orange2('橘子')
     }
 }

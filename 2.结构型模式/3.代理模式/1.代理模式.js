@@ -1,17 +1,21 @@
-class Google {
-    constructor() { }
-    get() {
-        return "google";
+"use strict";
+var Google = /** @class */ (function () {
+    function Google() {
     }
-}
-class Proxy {
-    constructor() {
+    Google.prototype.get = function () {
+        return "google";
+    };
+    return Google;
+}());
+var Proxy = /** @class */ (function () {
+    function Proxy() {
         this.google = new Google();
     }
-    get() {
+    Proxy.prototype.get = function () {
         return this.google.get();
-    }
-}
-let proxy = new Proxy();
-let ret = proxy.get();
+    };
+    return Proxy;
+}());
+var proxy = new Proxy();
+var ret = proxy.get();
 console.log(ret);

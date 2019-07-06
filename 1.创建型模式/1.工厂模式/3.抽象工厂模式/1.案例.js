@@ -14,13 +14,13 @@ var AppleButton = /** @class */ (function () {
     };
     return AppleButton;
 }());
-var WindowButton = /** @class */ (function () {
-    function WindowButton() {
+var WindowsButton = /** @class */ (function () {
+    function WindowsButton() {
     }
-    WindowButton.prototype.render = function () {
-        console.log('window按钮');
+    WindowsButton.prototype.render = function () {
+        console.log('windows按钮');
     };
-    return WindowButton;
+    return WindowsButton;
 }());
 var Icon = /** @class */ (function () {
     function Icon() {
@@ -37,52 +37,43 @@ var AppleIcon = /** @class */ (function () {
     };
     return AppleIcon;
 }());
-var WindowIcon = /** @class */ (function () {
-    function WindowIcon() {
+var WindowsIcon = /** @class */ (function () {
+    function WindowsIcon() {
     }
-    WindowIcon.prototype.render = function () {
-        console.log('Window图标');
+    WindowsIcon.prototype.render = function () {
+        console.log('Windows图标');
     };
-    return WindowIcon;
+    return WindowsIcon;
 }());
-var Factory = /** @class */ (function () {
-    function Factory() {
+var AppleFactory3 = /** @class */ (function () {
+    function AppleFactory3() {
     }
-    Factory.prototype.createButton = function () {
-    };
-    Factory.prototype.createIcon = function () {
-    };
-    return Factory;
-}());
-var AppleFactory = /** @class */ (function () {
-    function AppleFactory() {
-    }
-    AppleFactory.prototype.createButton = function () {
+    AppleFactory3.prototype.createButton = function () {
         return new AppleButton();
     };
-    AppleFactory.prototype.createIcon = function () {
+    AppleFactory3.prototype.createIcon = function () {
         return new AppleIcon();
     };
-    return AppleFactory;
+    return AppleFactory3;
 }());
-var WindowsFactory = /** @class */ (function () {
-    function WindowsFactory() {
+var WindowsFactory3 = /** @class */ (function () {
+    function WindowsFactory3() {
     }
-    WindowsFactory.prototype.createButton = function () {
-        return new WindowButton();
+    WindowsFactory3.prototype.createButton = function () {
+        return new WindowsButton();
     };
-    WindowsFactory.prototype.createIcon = function () {
-        return new WindowIcon();
+    WindowsFactory3.prototype.createIcon = function () {
+        return new WindowsIcon();
     };
-    return WindowsFactory;
+    return WindowsFactory3;
 }());
-var settings = {
-    'apple': AppleFactory,
-    'windows': WindowsFactory
-} /
-    let, appleFactory = new settings['apple']();
-appleFactory.createButton().render();
-appleFactory.createIcon().render();
-var windowsFactory = new settings['windows']();
-windowsFactory.createButton().render();
-windowsFactory.createIcon().render();
+var settings3 = {
+    'apple': AppleFactory3,
+    'windows': WindowsFactory3
+};
+var appleFactory3 = new settings3['apple']();
+appleFactory3.createButton().render();
+appleFactory3.createIcon().render();
+var windowsFactory3 = new settings3['windows']();
+windowsFactory3.createButton().render();
+windowsFactory3.createIcon().render();
