@@ -1,6 +1,21 @@
 {
+  "name": "vue3-json-schema-form-builder",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "deploy": "bash deploy.sh",
+    "gh-pages": "bash deploy_gh-pages.sh"
+  },
   "dependencies": {
-    "express": "^4.16.4",
-    "puppeteer": "^1.11.0"
+    "@types/json-schema": "^7.0.5",
+    "ajv": "^6.12.3",
+    "vue": "^3.0.0-rc.4"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.0-rc.4",
+    "vite": "^1.0.0-rc.3"
   }
 }
